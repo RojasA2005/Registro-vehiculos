@@ -1,0 +1,63 @@
+TDA Vehiculo:
+    Var brand ser string
+    Var year ser int
+    Var gasoline ser int
+    fun init(in:brand, year, gasoline)
+        brand <- in:brand
+        year <- in:year
+        gasoline <- in:gasoline
+    fin fun
+    fun show:
+        imprimir brand
+        imprimir year
+        imprimir gasoline
+    fin fun
+fin TDA
+
+TDA Seller:
+    Var price ser int
+    Var concessionaire ser string
+    Var sold ser boolean
+    sold <- False
+    fun init(in:price, concessionaire)
+        price = in:price
+        concessionaire = in:concessionaire
+    fin fun
+    fun sell_car(money)
+        si sold es igual a False
+            si money mayor o igual que price
+            sold <- True
+            imprimir el carro es tuyo
+            si no
+            imprimir fondos insuficientes
+            fin si
+        si no
+            imprimir carro no disponible
+        fin si
+    fin fun
+    fun change_price(new_price)
+        price <- new_price
+    fin fun
+    fun change_concessionaire(new_location)
+        concessionaire <- change_concessionaire
+    fin fun
+    fun show
+        si sold es igual a False
+            imprimir price
+            imprimir concessionaire
+        si no
+            imprimir carro no disponible
+        fin si
+TDA fin
+
+TDA Carro(Vehiculo):
+    Var kilometers ser int
+    Var seller ser Seller (clase)
+    fun init(in:Vehiculo, kilometers, seller)
+        Vehiculo.init <- in:Vehiculo
+        kilometers <- in:kilometers
+        seller <- in:seller
+    fin fun
+    fun show
+        imprimir kilometers
+        imprimir Vehiculo.show
